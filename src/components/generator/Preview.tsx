@@ -209,7 +209,7 @@ export function Preview() {
       <FiAlertCircle />
       <h4>Failed to load PDF file</h4>
       <p>
-        We couldn't generate your resume at this time. Please check your entries and try again.
+        We could not generate your resume at this time. Please check your entries and try again.
       </p>
       <ActionButton onClick={() => window.location.reload()}>
         <FiRefreshCw />
