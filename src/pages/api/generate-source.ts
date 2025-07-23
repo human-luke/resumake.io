@@ -37,14 +37,17 @@ function generateSourceCode(formData: FormValues) {
   zip.append(prettyDoc, { name: 'resume.tex' })
   zip.append(readme, { name: 'README.md' })
 
-  if (opts.inputs) {
-    zip.directory(opts.inputs.forEach((input: string) => {
-  zip.directory(input, '../');
-  },
+if (opts.inputs) {
+  const inputs = Array.isArray(opts.inputs) ? opts.inputs : [opts.inputs];
 
-  zip.finalize()
+  inputs.forEach((input: string) => {
+    zip.directory(input, '../');
+  });
+}
 
-  return zip
+zip.finalize();
+
+return zip;
 }
 
 /**
