@@ -40,7 +40,6 @@ function generateSourceCode(formData: FormValues) {
   if (opts.inputs) {
     zip.directory(opts.inputs.forEach((input: string) => {
   zip.directory(input, '../');
-});)
   }
 
   zip.finalize()
